@@ -1,0 +1,362 @@
+COMMENT - #!/usr/bin/env python3
+NL
+KEYWORD - from
+NAME - sys
+KEYWORD - import
+NAME - stdin
+NL
+NL
+NL
+KEYWORD - def
+NAME - Heapify
+LPAR - (
+NAME - A
+COMMA - ,
+NAME - i
+COMMA - ,
+NAME - end
+RPAR - )
+COLON - :
+NL
+INDENT - | |
+NAME - n
+EQUAL - =
+NAME - end
+NL
+NAME - l
+EQUAL - =
+NUMBER - 2
+STAR - *
+NAME - i
+PLUS - +
+NUMBER - 1
+NL
+NAME - r
+EQUAL - =
+NUMBER - 2
+STAR - *
+LPAR - (
+NAME - i
+PLUS - +
+NUMBER - 1
+RPAR - )
+NL
+KEYWORD - if
+LPAR - (
+NAME - l
+LESSQUAL - <=
+NAME - n
+MINUS - -
+NUMBER - 1
+KEYWORD - and
+NAME - A
+LSQB - [
+NAME - l
+RSQB - ]
+GREATER - >
+NAME - A
+LSQB - [
+NAME - i
+RSQB - ]
+RPAR - )
+COLON - :
+NL
+INDENT - |  |
+NAME - largest
+EQUAL - =
+NAME - l
+NL
+DEDENT
+KEYWORD - else
+COLON - :
+NL
+INDENT - |  |
+NAME - largest
+EQUAL - =
+NAME - i
+NL
+DEDENT
+KEYWORD - if
+LPAR - (
+NAME - r
+LESSQUAL - <=
+NAME - n
+MINUS - -
+NUMBER - 1
+KEYWORD - and
+NAME - A
+LSQB - [
+NAME - r
+RSQB - ]
+GREATER - >
+NAME - A
+LSQB - [
+NAME - largest
+RSQB - ]
+RPAR - )
+COLON - :
+NL
+INDENT - |  |
+NAME - largest
+EQUAL - =
+NAME - r
+NL
+DEDENT
+KEYWORD - if
+LPAR - (
+NAME - largest
+NOTEQUAL - !=
+NAME - i
+RPAR - )
+COLON - :
+NL
+INDENT - |  |
+NAME - A
+LSQB - [
+NAME - i
+RSQB - ]
+COMMA - ,
+NAME - A
+LSQB - [
+NAME - largest
+RSQB - ]
+EQUAL - =
+NAME - A
+LSQB - [
+NAME - largest
+RSQB - ]
+COMMA - ,
+NAME - A
+LSQB - [
+NAME - i
+RSQB - ]
+NL
+NAME - Heapify
+LPAR - (
+NAME - A
+COMMA - ,
+NAME - largest
+COMMA - ,
+NAME - end
+RPAR - )
+NL
+NL
+NL
+DEDENT
+DEDENT
+KEYWORD - def
+NAME - BuildMaxHeap
+LPAR - (
+NAME - A
+RPAR - )
+COLON - :
+NL
+INDENT - | |
+NAME - x
+EQUAL - =
+NAME - int
+LPAR - (
+LPAR - (
+NAME - len
+LPAR - (
+NAME - A
+RPAR - )
+MINUS - -
+NUMBER - 2
+RPAR - )
+SLASH - /
+NUMBER - 2
+RPAR - )
+NL
+KEYWORD - for
+NAME - i
+KEYWORD - in
+NAME - range
+LPAR - (
+NAME - x
+COMMA - ,
+MINUS - -
+NUMBER - 1
+COMMA - ,
+MINUS - -
+NUMBER - 1
+RPAR - )
+COLON - :
+NL
+INDENT - |  |
+NAME - Heapify
+LPAR - (
+NAME - A
+COMMA - ,
+NAME - i
+COMMA - ,
+NAME - len
+LPAR - (
+NAME - A
+RPAR - )
+RPAR - )
+NL
+NL
+NL
+DEDENT
+DEDENT
+KEYWORD - def
+NAME - HeapSort
+LPAR - (
+NAME - A
+RPAR - )
+COLON - :
+NL
+INDENT - | |
+NAME - solution
+EQUAL - =
+LSQB - [
+RSQB - ]
+NL
+NAME - n
+EQUAL - =
+NAME - len
+LPAR - (
+NAME - A
+RPAR - )
+MINUS - -
+NUMBER - 1
+NL
+NAME - BuildMaxHeap
+LPAR - (
+NAME - A
+RPAR - )
+NL
+NAME - solution
+DOT - .
+NAME - append
+LPAR - (
+NAME - A
+RPAR - )
+NL
+NAME - print
+LPAR - (
+STAR - *
+NAME - A
+COMMA - ,
+NAME - sep
+EQUAL - =
+STRING - ' '
+COMMA - ,
+NAME - end
+EQUAL - =
+STRING - ''
+RPAR - )
+NL
+KEYWORD - for
+NAME - i
+KEYWORD - in
+NAME - range
+LPAR - (
+NAME - len
+LPAR - (
+NAME - A
+RPAR - )
+MINUS - -
+NUMBER - 1
+COMMA - ,
+NUMBER - 0
+COMMA - ,
+MINUS - -
+NUMBER - 1
+RPAR - )
+COLON - :
+NL
+INDENT - |  |
+NAME - A
+LSQB - [
+NUMBER - 0
+RSQB - ]
+COMMA - ,
+NAME - A
+LSQB - [
+NAME - i
+RSQB - ]
+EQUAL - =
+NAME - A
+LSQB - [
+NAME - i
+RSQB - ]
+COMMA - ,
+NAME - A
+LSQB - [
+NUMBER - 0
+RSQB - ]
+NL
+NAME - Heapify
+LPAR - (
+NAME - A
+COMMA - ,
+NUMBER - 0
+COMMA - ,
+NAME - i
+RPAR - )
+NL
+NAME - print
+LPAR - (
+STRING - ' | '
+COMMA - ,
+NAME - end
+EQUAL - =
+STRING - ''
+RPAR - )
+NL
+NAME - print
+LPAR - (
+STAR - *
+NAME - A
+COMMA - ,
+NAME - sep
+EQUAL - =
+STRING - ' '
+COMMA - ,
+NAME - end
+EQUAL - =
+STRING - ''
+RPAR - )
+NL
+DEDENT
+NAME - print
+LPAR - (
+STRING - ' ; '
+RPAR - )
+NL
+NL
+DEDENT
+KEYWORD - for
+NAME - line
+KEYWORD - in
+NAME - stdin
+COLON - :
+NL
+INDENT - | |
+NAME - H
+EQUAL - =
+LSQB - [
+NAME - int
+LPAR - (
+NAME - elem
+RPAR - )
+KEYWORD - for
+NAME - elem
+KEYWORD - in
+NAME - line
+DOT - .
+NAME - split
+LPAR - (
+RPAR - )
+RSQB - ]
+NL
+NAME - HeapSort
+LPAR - (
+NAME - H
+RPAR - )
+NL
+NL
+DEDENT
+ENDMARKER
